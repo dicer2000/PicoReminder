@@ -11,7 +11,6 @@
 		8B2F7EF1253C8F27008D83FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F7EF0253C8F27008D83FD /* ContentView.swift */; };
 		8B2F7EF3253C8F28008D83FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B2F7EF2253C8F28008D83FD /* Assets.xcassets */; };
 		8B2F7EF6253C8F28008D83FD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B2F7EF5253C8F28008D83FD /* Preview Assets.xcassets */; };
-		8B2F7EF8253C8F28008D83FD /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F7EF7253C8F28008D83FD /* Persistence.swift */; };
 		8B2F7EFB253C8F28008D83FD /* PicoReminder3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F7EF9253C8F28008D83FD /* PicoReminder3.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -21,7 +20,6 @@
 		8B2F7EF0253C8F27008D83FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8B2F7EF2253C8F28008D83FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B2F7EF5253C8F28008D83FD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		8B2F7EF7253C8F28008D83FD /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		8B2F7EFA253C8F28008D83FD /* PicoReminder3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PicoReminder3.xcdatamodel; sourceTree = "<group>"; };
 		8B2F7EFC253C8F28008D83FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,7 +57,6 @@
 				8B2F7EEE253C8F27008D83FD /* PicoReminder3App.swift */,
 				8B2F7EF0253C8F27008D83FD /* ContentView.swift */,
 				8B2F7EF2253C8F28008D83FD /* Assets.xcassets */,
-				8B2F7EF7253C8F28008D83FD /* Persistence.swift */,
 				8B2F7EFC253C8F28008D83FD /* Info.plist */,
 				8B2F7EF9253C8F28008D83FD /* PicoReminder3.xcdatamodeld */,
 				8B2F7EF4253C8F28008D83FD /* Preview Content */,
@@ -144,7 +141,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B2F7EF8253C8F28008D83FD /* Persistence.swift in Sources */,
 				8B2F7EF1253C8F27008D83FD /* ContentView.swift in Sources */,
 				8B2F7EFB253C8F28008D83FD /* PicoReminder3.xcdatamodeld in Sources */,
 				8B2F7EEF253C8F27008D83FD /* PicoReminder3App.swift in Sources */,
