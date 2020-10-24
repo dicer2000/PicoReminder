@@ -12,6 +12,8 @@
 		8B2F7EF3253C8F28008D83FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B2F7EF2253C8F28008D83FD /* Assets.xcassets */; };
 		8B2F7EF6253C8F28008D83FD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B2F7EF5253C8F28008D83FD /* Preview Assets.xcassets */; };
 		8B2F7EFB253C8F28008D83FD /* PicoReminder3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F7EF9253C8F28008D83FD /* PicoReminder3.xcdatamodeld */; };
+		8B3BB4F125423B6000E5F415 /* UpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3BB4F025423B6000E5F415 /* UpdateView.swift */; };
+		8B3BB4F325423BB000E5F415 /* dataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3BB4F225423BB000E5F415 /* dataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		8B2F7EF5253C8F28008D83FD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8B2F7EFA253C8F28008D83FD /* PicoReminder3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PicoReminder3.xcdatamodel; sourceTree = "<group>"; };
 		8B2F7EFC253C8F28008D83FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B3BB4F025423B6000E5F415 /* UpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateView.swift; sourceTree = "<group>"; };
+		8B3BB4F225423BB000E5F415 /* dataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,11 +58,12 @@
 		8B2F7EED253C8F27008D83FD /* PicoReminder3 */ = {
 			isa = PBXGroup;
 			children = (
+				8B2F7F04253D5433008D83FD /* Model */,
+				8B3BB4EF2541E39B00E5F415 /* ModelView */,
+				8B3BB4EE2541E38800E5F415 /* View */,
 				8B2F7EEE253C8F27008D83FD /* PicoReminder3App.swift */,
-				8B2F7EF0253C8F27008D83FD /* ContentView.swift */,
 				8B2F7EF2253C8F28008D83FD /* Assets.xcassets */,
 				8B2F7EFC253C8F28008D83FD /* Info.plist */,
-				8B2F7EF9253C8F28008D83FD /* PicoReminder3.xcdatamodeld */,
 				8B2F7EF4253C8F28008D83FD /* Preview Content */,
 			);
 			path = PicoReminder3;
@@ -70,6 +75,31 @@
 				8B2F7EF5253C8F28008D83FD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8B2F7F04253D5433008D83FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8B2F7EF9253C8F28008D83FD /* PicoReminder3.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8B3BB4EE2541E38800E5F415 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8B2F7EF0253C8F27008D83FD /* ContentView.swift */,
+				8B3BB4F025423B6000E5F415 /* UpdateView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8B3BB4EF2541E39B00E5F415 /* ModelView */ = {
+			isa = PBXGroup;
+			children = (
+				8B3BB4F225423BB000E5F415 /* dataModel.swift */,
+			);
+			path = ModelView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,7 +172,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B2F7EF1253C8F27008D83FD /* ContentView.swift in Sources */,
+				8B3BB4F125423B6000E5F415 /* UpdateView.swift in Sources */,
 				8B2F7EFB253C8F28008D83FD /* PicoReminder3.xcdatamodeld in Sources */,
+				8B3BB4F325423BB000E5F415 /* dataModel.swift in Sources */,
 				8B2F7EEF253C8F27008D83FD /* PicoReminder3App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

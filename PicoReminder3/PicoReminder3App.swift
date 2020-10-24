@@ -4,6 +4,11 @@
 //
 //  Created by Brett Huffman on 10/18/20.
 //
+//  Project 2
+//  Create an app that will work like most task listing applications.
+//
+//  Credit to CoreData Sessions from CS 5222 and BetterProgramming website
+//
 
 import SwiftUI
 import CoreData
@@ -20,6 +25,8 @@ struct PicoReminder3App: App {
     }
 }
 
+
+/* Core Data Container Helpers */
 var persistentContainer: NSPersistentContainer = {
     
     let container = NSPersistentContainer(name: "PicoReminder3")
