@@ -16,13 +16,13 @@ import CoreData
 
 class dataModel : ObservableObject {
     // Setup all our Observer/Publisher vars
-    @Published var data : [NSManagedObject] = []
+    @Published var data : [PicoReminder3.Data] = []
     @Published var title = ""
     @Published var taskDate = Date.init()
     @Published var isUpdate = false
     @Published var updateTxt = ""
     @Published var updateTaskDate = Date.init()
-    @Published var selectedObj = NSManagedObject()
+    @Published var selectedObj: PicoReminder3.Data?    // Improved version :: Was NSManagedObject()
     @Published var taskHasDate = false
     
     let context = persistentContainer.viewContext
@@ -34,11 +34,12 @@ class dataModel : ObservableObject {
     // Read the data from DB
     func readData() {
 
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Data")
+//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Data")
     
+        let request: NSFetchRequest<PicoReminder3.Data> = PicoReminder3.Data.fetchRequest()
         do {
             let results = try context.fetch(request)
-            self.data = results as! [NSManagedObject]
+            self.data = results // as! [NSManagedObject]
         }
         catch {
             print(error.localizedDescription)
@@ -54,10 +55,16 @@ class dataModel : ObservableObject {
             return;
         }
         
+        /*
         let entity = NSEntityDescription.insertNewObject(forEntityName: "Data",
                                                          into: context)
         entity.setValue(title, forKey: "title")
         entity.setValue(UUID(), forKey: "id")
+        */
+        
+        let entity = PicoReminder3.Data(context: context)
+        entity.title = title
+        entity.id = UUID()
         
         do {
             // Try a save, if successful append to entity list
@@ -101,12 +108,16 @@ class dataModel : ObservableObject {
     // Update a task
     func updateData() {
         // Update the data eleement
-        let index = data.firstIndex(of: selectedObj)
+//        let index = data.firstIndex(of: selectedObj)
+//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Data")
         
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Data")
+        // Improved way of getting data
+        guard let selected = selectedObj else { return }
+        let index = data.firstIndex(of: selected)
+        let request: NSFetchRequest<PicoReminder3.Data> = PicoReminder3.Data.fetchRequest()
     
         do {
-            let results = try context.fetch(request) as! [NSManagedObject]
+            let results = try context.fetch(request) // as! [NSManagedObject]
             
             let obj = results.first { (obj) -> Bool in
                     if obj == selectedObj { return true }
@@ -135,7 +146,7 @@ class dataModel : ObservableObject {
     }
     
     // Open the Update View (getting all the items out of the selected object
-    func openUpdateView(obj: NSManagedObject) {
+    func openUpdateView(obj: PicoReminder3.Data) {
         selectedObj = obj
         updateTxt = getTitle(obj: obj)
         updateTaskDate = getDate(obj: obj)
@@ -150,20 +161,21 @@ class dataModel : ObservableObject {
     }
     
     // Get if the task is complete (passing in task object)
-    func getComplete(obj : NSManagedObject) -> Bool {
+    func getComplete(obj : PicoReminder3.Data) -> Bool {
         let val = obj.value(forKey: "complete") ?? false
         return val as! Bool
     }
     
     // Set an item complete (passing in a task object)
-    func setComplete(completeObj : NSManagedObject) {
+    func setComplete(completeObj : PicoReminder3.Data) {
         // Update the data eleement
         let index = data.firstIndex(of: completeObj)
         
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Data")
+        let request: NSFetchRequest<PicoReminder3.Data> = PicoReminder3.Data.fetchRequest()
+//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Data")
     
         do {
-            let results = try context.fetch(request) as! [NSManagedObject]
+            let results = try context.fetch(request) // Old: as! [NSManagedObject]
             
             let obj = results.first { (obj) -> Bool in
                 if obj == completeObj { return true }
@@ -184,6 +196,12 @@ class dataModel : ObservableObject {
     // Get the Task Date (passing in a task object)
     func getDate(obj : NSManagedObject) -> Date {
         let val = obj.value(forKey: "taskDate") ?? Date.init()
+        return val as! Date
+    }
+    
+    // New way of get date by just using the selectedObj
+    func getDate() -> Date {
+        let val = selectedObj?.value(forKey: "taskDate") ?? Date.init()
         return val as! Date
     }
     
